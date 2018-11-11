@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'extend.html' %}
+
+<html>
+<head>
+	{% block head %}
+	<title>Send OTP</title>
+	<style type="text/css">
+		
+		textarea{
+			background-color: #90ee9069;
+			box-shadow: 2px 2px 2px black;
+			color: green;
+			    -webkit-box-sizing: border-box;
+    			-moz-box-sizing: border-box;
+    		box-sizing: border-box;
+
+    width: 100%;
+		}
+
+
+	</style>
+{% endblock %}
+</head>
+<body>
+<br>
+{% block body %}
+	<div class="row">
+		<div class="col-12">
+			<h1>This is Message Sending Form!</h1><p></p>
+		</div>
+	</div>
+	<!-- <div class="row"> -->
+	<form method="POST">
+		{% csrf_token %}
+		<!-- <div class="col-8"> -->
+		<textarea  name="body" rows="3" cols="100">Hi! Your OTP is: {{otp}}.</textarea><p></p>
+		<!-- </div> -->
+		<input type="hidden" name="otp" value='{{ otp }}'>
+		 <p>Press Click on Send To Forward Message at +91 {{ contact.mobile }}!</p>
+		<input class="btn btn-outline-success btn-lg" type="submit" value="Send">
+	</form>
+<!-- </div> -->
+{% endblock %}
+</body>
+</html>

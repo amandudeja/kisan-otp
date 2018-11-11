@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'extend.html' %}
+
+
+<html>
+<head>
+	{% block head %}
+	<title>Details</title>
+	<style type="text/css">
+	
+	.jumbotron{
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	</style>
+	{% endblock %}
+</head>
+<body>
+{% block body %}
+	<h1>This is the details page!</h1>
+	<div class="jumbotron">
+		FirstName: {{ contact.first_name }}<p></p>
+		LastName:  {{ contact.last_name }}<p></p>
+		Mobile Number: +91 {{ contact.mobile }}<p></p>
+		</div>
+		<a class="btn btn-outline-primary btn-lg" href="{% url 'contacts:send' contact.id %}">Send Message!</a>
+
+
+{% endblock %}
+</body>
+</html>

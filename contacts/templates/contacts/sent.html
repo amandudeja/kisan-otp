@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'extend.html' %}
+<html>
+<head>
+	{% block head %}
+	<title>Sent List</title>
+	<style type="text/css">
+		h5{
+			display: inline-block;
+		}
+
+
+	</style>
+{% endblock %}
+</head>
+<body>
+{% block body %}
+	<div class="jumbotron">
+		<h1>This is Sent Items List!</h1>
+	</div>
+	<ol align='center'>
+	{% for sent in sents  %}
+
+	<li>
+		<h5>Name:-</h5>{{ sent.mobile.first_name }} {{ sent.mobile.last_name }}
+		<br><h5>Mobile Number:-</h5>{{ sent.mobile.mobile }}
+		<br><h5>SentAt:-</h5>{{ sent.sent_time }}
+		<br><h5>Otp:-</h5>{{ sent.otp }}
+	</li>
+	<hr>
+
+	{% endfor %}
+	</ol>
+{% endblock %}
+</body>
+</html>
