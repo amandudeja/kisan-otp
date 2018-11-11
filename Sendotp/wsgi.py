@@ -15,6 +15,3 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Sendotp.settings')
 
 application = get_wsgi_application()
 
-## Deployment ##
-from whitenoise.django import DjangoWhiteNoise
-application = DjangoWhiteNoise(application)

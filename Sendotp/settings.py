@@ -130,14 +130,9 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 ## TWILIO CONFIGURATION ##
 TWILIO_ACCOUNT_SID = 'ACb8c8cd5c12ed5ddfba85b9d0a3fa229d'
 TWILIO_AUTH_TOKEN = '02f473c24c602d0ce6159c901eeeac36'
 TWILIO_PHONE_NUMBER= '+18304200266'
 
-## Deployment ##
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
